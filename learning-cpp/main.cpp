@@ -171,11 +171,73 @@ using namespace std;
 //    return 0;
 //}
 
+//stringstream standard headed that allows a string to be treated as a stream.
+// useful for converting strings to numeric values and vice versa
+
+//#include <sstream> 
+//
+//int main(){
+//    string mystr;
+//    float price=0;
+//    int quantity=0;
+//    
+//    cout << "Enter price: ";
+//    getline(cin, mystr);
+//    stringstream(mystr) >> price;
+//    
+//    cout << "Enter quantity: ";
+//    getline(cin, mystr);
+//    
+//    stringstream(mystr) >> quantity;
+//    
+//    cout << "Total price: " << price*quantity << endl;
+//    
+//    return 0;
+//    
+//}
+
+//control flow
+
+/*
+ if (x > 0)
+    cout << "x is positive";
+ else if (x < 0)
+    cout << "x is negative";
+ else
+    cout << "x is 0";
+ 
+ if more than one line, use braces
+ 
+ */
 
 
+// range-based for loops
 
+//int main(){
+//    string str {"Hello!"};
+//    
+////    each char in string
+//    for (char c: str){
+//        cout << "[" << c << "]";
+//    }
+//    cout << '\n';
+//}
 
+// passing parameters to functions by reference:
 
+void duplicate(int& a, int&b, int&c){ // what is passed is not a copy.
+    a*=2;
+    b*=2;
+    c*=2;
+}
+
+int main(){
+    int x(1), y(3), z(7);
+    
+    duplicate(x, y, z);
+    cout << "x=" << x << " , y=" << y << " , z=" << z;
+    return 0;
+}
 
 
 
