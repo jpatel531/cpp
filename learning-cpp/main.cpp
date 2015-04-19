@@ -264,34 +264,119 @@ using namespace std;
 
 // declaring functions prototypes beforehand so that they can be used even though they come after
 
-void odd(int x);
-void even(int x);
+//void odd(int x);
+//void even(int x);
+//
+//int main(){
+//    int i;
+//    do {
+//        cout << "Please, enter number (0 to exit): ";
+//        cin >> i;
+//        odd(i);
+//    }while(i!=0);
+//    return 0;
+//}
+//
+//void odd(int x){
+//    if ((x%2)!= 0) cout << "It is odd.\n";
+//    else even(x);
+//}
+//
+//void even(int x){
+//    cout << "It is even.\n";
+//}
+
+// OVERLOADED FUNCTIONS
+
+//two functions can have the same name if their
+// parameters and return types are different
+
+//int operate(int a, int b){
+//    return (a*b);
+//}
+//
+//double operate(double a, double b){
+//    return (a/b);
+//}
+//
+//int main(){
+//    int x=5, y=2;
+//    double n=5.0,m=2.0;
+//    cout << operate(x,y) << endl;
+//    cout << operate(n, m) << endl;
+//    return 0;
+//}
+
+/*
+ if you have multiple functions with the same name
+ and same function body. e.g. a + b - you can use
+ function templates
+ */
+
+//template <class T> // T represents a generic type
+//T sum (T a, T b) {
+//    T result;
+//    result = a + b;
+//    return result;
+//}
+//
+//int main(){
+//    int i=5, j=6, k;
+//    
+//    double f=2.0, g=0.5, h;
+//    
+//    k = sum<int>(i,j); // T is now int
+//    
+//    h = sum<double>(f, g); // T is now double
+//    // angle backets only really necessary when the types are ambiguous
+//    // in this case they are unneccessary as the compiler can infer ints and doubles
+//    // respectively
+//    
+//    cout << k << endl;
+//    cout << h << endl;
+//    return 0;
+//}
+
+// if template has multiple types just do <class Type1, classType2>
+// and sum<Type1,Type2>(x, y)
+
+// ---- NON TYPE TEMPLATE ARGUMENTS ---
+
+//// template params can include instances of types
+//
+//template <class T, int N>
+//T fixed_multiply(T val){
+//    return val * N;
+//}
+//
+//// the second template arg always needs to be a constant expression
+//
+//int main(){
+//    cout << fixed_multiply<int, 2>(10) << endl;
+//    cout << fixed_multiply<int, 3>(10) << endl;
+//    return 0;
+//}
+
+
+// --- NAMESPACES ---
+
+//avoids clashing n ting
+
+namespace foo {
+    int value() {return 5;}
+}
+
+namespace bar {
+    const double pi = 3.1416;
+    double value(){return 2*pi;}
+}
 
 int main(){
-    int i;
-    do {
-        cout << "Please, enter number (0 to exit): ";
-        cin >> i;
-        odd(i);
-    }while(i!=0);
+    cout << foo::value() << endl;
+    cout << bar::value() << endl;
+    cout << bar::pi << endl;
     return 0;
 }
-
-void odd(int x){
-    if ((x%2)!= 0) cout << "It is odd.\n";
-    else even(x);
-}
-
-void even(int x){
-    cout << "It is even.\n";
-}
-
-
-
-
-
-
-
 
 
 
